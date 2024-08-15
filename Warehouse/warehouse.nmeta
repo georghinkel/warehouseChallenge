@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<nmeta:Namespace xmi:version="2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Uri="https://multi-workshop.github.io/warehouse/nmeta" Prefix="warehouse" Name="Warehouse" xmlns:xmi="http://www.omg.org/XMI" xmlns:nmeta="http://nmf.codeplex.com/nmeta/">
+  <Types xsi:type="nmeta:Class" IsAbstract="true" BaseTypes="http://nmf.codeplex.com/nmeta/#//MetaElement" InstanceOf="#//ProductSpecification" Name="Product">
+    <References ReferenceType="nmeta:Class #//Product" UpperBound="-1" Name="recommends" />
+    <Attributes LowerBound="1" Type="nmeta:PrimitiveType http://nmf.codeplex.com/nmeta/#//Double" Name="salesPrice" />
+  </Types>
+  <Types xsi:type="nmeta:Class" BaseTypes="http://nmf.codeplex.com/nmeta/#//Class" Name="ProductSpecification">
+    <ReferenceConstraints Constrains="http://nmf.codeplex.com/nmeta/#//Class/ReferenceConstraints" xmi:id="$5" />
+    <ReferenceConstraints Constrains="http://nmf.codeplex.com/nmeta/#//Class/AttributeConstraints" xmi:id="$6" />
+    <ReferenceConstraints Constrains="http://nmf.codeplex.com/nmeta/#//Class/InstanceOf" xmi:id="$7" />
+    <ReferenceConstraints References="#//IndividualProduct" Constrains="http://nmf.codeplex.com/nmeta/#//Class/BaseTypes" xmi:id="$8" />
+    <Attributes LowerBound="1" Type="nmeta:PrimitiveType http://nmf.codeplex.com/nmeta/#//Double" Name="taxRate" />
+    <Attributes LowerBound="1" Type="nmeta:PrimitiveType http://nmf.codeplex.com/nmeta/#//String" Name="currency" />
+    <Attributes LowerBound="1" Type="nmeta:PrimitiveType http://nmf.codeplex.com/nmeta/#//DateTime" Name="introductionDate" />
+  </Types>
+  <Types xsi:type="nmeta:Class" BaseTypes="#//Product" Name="BulkProduct">
+    <Attributes LowerBound="1" Type="nmeta:PrimitiveType http://nmf.codeplex.com/nmeta/#//Integer" Name="quantity" />
+    <Attributes LowerBound="1" Type="nmeta:PrimitiveType http://nmf.codeplex.com/nmeta/#//Integer" Name="stock" />
+  </Types>
+  <Types xsi:type="nmeta:Class" BaseTypes="#//ProductSpecification" Name="BulkProductSpecification">
+    <ReferenceConstraints References="#//BulkProduct" Constrains="http://nmf.codeplex.com/nmeta/#//Class/BaseTypes" xmi:id="$16" />
+  </Types>
+  <Types xsi:type="nmeta:Class" IsAbstract="true" BaseTypes="#//Product http://nmf.codeplex.com/nmeta/#//Class" Name="IndividualProduct">
+    <ReferenceConstraints Constrains="http://nmf.codeplex.com/nmeta/#//Class/ReferenceConstraints" xmi:id="$18" />
+    <ReferenceConstraints Constrains="http://nmf.codeplex.com/nmeta/#//Class/AttributeConstraints" xmi:id="$19" />
+    <ReferenceConstraints Constrains="http://nmf.codeplex.com/nmeta/#//Class/InstanceOf" xmi:id="$20" />
+    <ReferenceConstraints References="#//SaleItem" Constrains="http://nmf.codeplex.com/nmeta/#//Class/BaseTypes" xmi:id="$21" />
+  </Types>
+  <Types xsi:type="nmeta:Class" IsAbstract="true" InstanceOf="#//IndividualProduct" Name="SaleItem">
+    <References IsContainment="true" ReferenceType="nmeta:Class #//Return" Name="return" />
+    <References IsContainment="true" ReferenceType="nmeta:Class #//SalePrice" Name="sale" />
+  </Types>
+  <Types xsi:type="nmeta:Class" Name="SalePrice">
+    <Attributes LowerBound="1" Type="nmeta:PrimitiveType http://nmf.codeplex.com/nmeta/#//Double" Name="reducedPrice" />
+  </Types>
+  <Types xsi:type="nmeta:Class" Name="Return">
+    <Attributes LowerBound="1" Type="nmeta:PrimitiveType http://nmf.codeplex.com/nmeta/#//DateTime" Name="returnDate" />
+    <Attributes LowerBound="1" Type="nmeta:PrimitiveType http://nmf.codeplex.com/nmeta/#//String" Name="reason" />
+  </Types>
+  <Types xsi:type="nmeta:Class" Name="Inventory">
+    <References IsContainment="true" ReferenceType="nmeta:Class #//BulkProduct" UpperBound="-1" Name="bulkProducts" />
+    <References IsContainment="true" ReferenceType="nmeta:Class #//SaleItem" UpperBound="-1" Name="items" />
+  </Types>
+</nmeta:Namespace>

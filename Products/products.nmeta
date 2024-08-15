@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<nmeta:Namespace xmi:version="2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Uri="https://example.org" Prefix="ex" Name="MyWarehouse" xmlns:xmi="http://www.omg.org/XMI" xmlns:nmeta="http://nmf.codeplex.com/nmeta/">
+  <Types xmlns:warehouse="https://multi-workshop.github.io/warehouse/nmeta" xsi:type="warehouse:ProductSpecification" taxRate="7" currency="EUR" introductionDate="2003-02-01T00:00:00" Name="Book">
+    <Attributes LowerBound="1" Type="nmeta:PrimitiveType http://nmf.codeplex.com/nmeta/#//String" Name="isbn" />
+  </Types>
+  <Types xmlns:warehouse="https://multi-workshop.github.io/warehouse/nmeta" xsi:type="warehouse:ProductSpecification" taxRate="15" currency="USD" introductionDate="2004-03-02T00:00:00" Name="DVD">
+    <References ReferenceType="warehouse:ProductSpecification #//DVDPlayer" Refines="https://multi-workshop.github.io/warehouse/nmeta#//Product/recommends" Name="recommendedPlayer" />
+  </Types>
+  <Types xmlns:warehouse="https://multi-workshop.github.io/warehouse/nmeta" xsi:type="warehouse:ProductSpecification" taxRate="15" currency="USD" Name="DVDPlayer" />
+  <Types xmlns:warehouse="https://multi-workshop.github.io/warehouse/nmeta" xsi:type="warehouse:ProductSpecification" taxRate="15" currency="SEK" introductionDate="2006-05-04T00:00:00" Name="MobilePhone">
+    <References ReferenceType="warehouse:ProductSpecification #//MobilePhoneCase" Refines="https://multi-workshop.github.io/warehouse/nmeta#//Product/recommends" Name="recommendedCase" />
+  </Types>
+  <Types xmlns:warehouse="https://multi-workshop.github.io/warehouse/nmeta" xsi:type="warehouse:ProductSpecification" taxRate="15" currency="SEK" introductionDate="2007-06-05T00:00:00" Name="MobilePhoneCase" />
+  <Types xmlns:warehouse="https://multi-workshop.github.io/warehouse/nmeta" xsi:type="warehouse:BulkProductSpecification" taxRate="15" currency="NZD" introductionDate="2008-07-06T00:00:00" Name="AABatteryCell" />
+</nmeta:Namespace>

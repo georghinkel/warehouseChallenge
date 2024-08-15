@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="warehouse.nmeta" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="warehouse.nmeta" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="NMF-Basics" Version="2.0.221" />
+  </ItemGroup>
+
+</Project>

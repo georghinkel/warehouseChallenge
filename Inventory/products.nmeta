@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<nmeta:Namespace xmi:version="2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Uri="https://example.org/products" Prefix="p" Name="Products" xmlns:xmi="http://www.omg.org/XMI" xmlns:nmeta="http://nmf.codeplex.com/nmeta/">
+  <Types xmlns:ex="https://example.org" xsi:type="ex:Book" isbn="..." salesPrice="9.95" Name="Moby Dick" />
+  <Types xmlns:ex="https://example.org" xsi:type="ex:DVD" recommendedPlayer="#//HaChi779" salesPrice="19.95" Name="SpaceOdyssey" />
+  <Types xmlns:ex="https://example.org" xsi:type="ex:DVDPlayer" salesPrice="99.99" Name="HaChi779">
+    <Attributes LowerBound="1" Type="nmeta:PrimitiveType http://nmf.codeplex.com/nmeta/#//String" Name="serialNumber" />
+  </Types>
+  <Types xmlns:ex="https://example.org" xsi:type="ex:MobilePhoneCase" salesPrice="17.95" Name="Matey" />
+  <Types xmlns:ex="https://example.org" xsi:type="ex:MobilePhone" recommendedCase="#//Matey" salesPrice="599.15" Name="Mate0815" />
+</nmeta:Namespace>
